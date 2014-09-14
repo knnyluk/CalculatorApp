@@ -60,6 +60,10 @@ public class CalculatorApp {
         System.out.println("The difference of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] - numbers[1]));
     }
 
+    public static void printProduct(double[] numbers) {
+        System.out.println("\nThe product of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] * numbers[1]) + "\n");
+    }
+
     public static void printSqRt(double inputNum) {
         System.out.println("\nThe square root of " + inputNum + " is " + Math.sqrt(inputNum) + "\n");
     }
@@ -79,7 +83,10 @@ public class CalculatorApp {
                                        "I need a number to get started\n");
                     printDifference(getTwoDoubles());
                     break;
-            case 3:
+            case 3: System.out.println("\n\"We don't die; we multiply.\n\"" +
+                                       "I need a number to get started\n");
+                    printProduct(getTwoDoubles());
+                    break;
             case 4:
                 break;
             case 5: System.out.println("\nTo do this square root thing I'm going to need a number\n");
