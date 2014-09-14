@@ -64,6 +64,10 @@ public class CalculatorApp {
         System.out.println("\nThe product of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] * numbers[1]) + "\n");
     }
 
+    public static void printQuotient(double[] numbers) {
+        System.out.println("\nThe quotient of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] / numbers[1]) + "\n");
+    }
+
     public static void printSqRt(double inputNum) {
         System.out.println("\nThe square root of " + inputNum + " is " + Math.sqrt(inputNum) + "\n");
     }
@@ -87,13 +91,14 @@ public class CalculatorApp {
                                        "I need a number to get started\n");
                     printProduct(getTwoDoubles());
                     break;
-            case 4:
+            case 4: System.out.println("\nAhh, the classic divide and conquer\n" +
+                                       "Alright, sounds good.\n\n" +
+                                       "I need a number to get started\n");
+                    printQuotient(getTwoDoubles());
                 break;
             case 5: System.out.println("\nTo do this square root thing I'm going to need a number\n");
                     printSqRt(getValidDouble());
         }
         main(dummyArray);
-//        System.out.println(getMathOp());
-//        System.out.println("");
     }
 }
