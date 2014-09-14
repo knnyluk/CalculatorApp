@@ -22,6 +22,14 @@ public class CalculatorApp {
         return inputNum;
     }
 
+    public static double[] getTwoDoubles() {
+        double[] result = new double[2];
+        result[0] = getValidDouble();
+        System.out.println("\nAnother number please.\n");
+        result[1] = getValidDouble();
+        return result;
+    }
+
     public static double getValidDouble() {
         while (!userInput.hasNextDouble()) {
             System.out.println("\nI need a number.\n" +
@@ -53,14 +61,13 @@ public class CalculatorApp {
         String[] dummyArray = {};
 
         switch (opSelection) {
-            case 1:
+            case 1: System.out.print(getTwoDoubles());
             case 2:
             case 3:
             case 4:
                 break;
             case 5: System.out.println("\nTo do this square root thing I'm going to need a number\n");
                     printSqRt(getValidDouble());
-
         }
         main(dummyArray);
 //        System.out.println(getMathOp());
