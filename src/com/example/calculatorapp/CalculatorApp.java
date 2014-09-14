@@ -56,6 +56,10 @@ public class CalculatorApp {
         System.out.println("The sum of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] + numbers[1]));
     }
 
+    public static void printDifference(double[] numbers) {
+        System.out.println("The difference of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] - numbers[1]));
+    }
+
     public static void printSqRt(double inputNum) {
         System.out.println("\nThe square root of " + inputNum + " is " + Math.sqrt(inputNum) + "\n");
     }
@@ -73,6 +77,8 @@ public class CalculatorApp {
                                        "There's a high correlation between positivity and life expectancy.\n" +
                                        "So, maybe being more positive is a good idea. Anyway . . .\n\n" +
                                        "I need a number to get started\n");
+                    printDifference(getTwoDoubles());
+                    break;
             case 3:
             case 4:
                 break;
