@@ -39,6 +39,15 @@ public class CalculatorApp {
         return userInput.nextDouble();
     }
 
+    public static int getValidInt() {
+        while (!userInput.hasNextInt()) {
+            System.out.println("\nI need a number.\n" +
+                    "Please try again.\n\n");
+            userInput.next();
+        }
+        return userInput.nextInt();
+    }
+
     private static boolean invalidOpSelection(int selection) {
         return (selection < lowValidOp || selection > highValidOp);
     }
@@ -53,11 +62,11 @@ public class CalculatorApp {
     }
 
     public static void printSum(double[] numbers) {
-        System.out.println("The sum of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] + numbers[1]));
+        System.out.println("\nThe sum of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] + numbers[1]));
     }
 
     public static void printDifference(double[] numbers) {
-        System.out.println("The difference of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] - numbers[1]));
+        System.out.println("\nThe difference of " + numbers[0] + " and " + numbers[1] + " is: " + (numbers[0] - numbers[1]));
     }
 
     public static void printProduct(double[] numbers) {
@@ -77,11 +86,11 @@ public class CalculatorApp {
         String[] dummyArray = {};
 
         switch (opSelection) {
-            case 1: System.out.println("So, adding is your thing, eh?\n\n" +
+            case 1: System.out.println("\nSo, adding is your thing, eh?\n\n" +
                                        "I need a number to get started\n");
                     printSum(getTwoDoubles());
                     break;
-            case 2: System.out.println("Subtraction?\n" +
+            case 2: System.out.println("\nSubtraction?\n" +
                                        "There's a high correlation between positivity and life expectancy.\n" +
                                        "So, maybe being more positive is a good idea. Anyway . . .\n\n" +
                                        "I need a number to get started\n");
@@ -99,6 +108,11 @@ public class CalculatorApp {
             case 5: System.out.println("\nTo do this square root thing I'm going to need a number\n");
                     printSqRt(getValidDouble());
         }
-        main(dummyArray);
+        System.out.println("\nEnter 42 if you would like to continue.\n");
+        switch (getValidInt()) {
+            case 42: main(dummyArray);
+            default: System.out.println("\n Smell you later!");
+        }
+
     }
 }
